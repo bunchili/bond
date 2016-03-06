@@ -1,0 +1,10 @@
+<p><%= flash[:alert] %></p>
+<h2>회원 가입하기</h2>
+<p>아이디는 본인 실명으로 지정해주시기 바랍니다.</p>
+
+<form action="/users/signup_complete" method="post">
+  <p>아이디: <input type="text" name="username"></p>
+  <p>비밀번호: <input type="password" name="password"></p>
+  <p>비밀번호 확인: <input type="password" name="retype_password"></p>
+  <input type="submit" value="가입">
+</form>
