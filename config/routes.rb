@@ -6,8 +6,8 @@ Bond::Application.routes.draw do
   post "foods/write_complete"
   get "foods/edit/:id" => 'foods#edit'
   post "foods/edit_complete"
-  get "foods/delete_complete"
-  # The priority is based upon order of creation: first created -> highest priority.
+  get "foods/delete_complete/:id" => 'foods#delete_complete'  
+# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
