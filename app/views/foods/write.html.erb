@@ -1,16 +1,32 @@
-<p><%= flash[:alert] %></p>
-<h2>게시글  등록하기</h2>
+<div class="container">
+  <% if !flash[:alert].nil? %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+  <% end %>
 
-<form action="/foods/write_complete" method="post" enctype="multipart/form-data">
-  <p style="color: #ff0000">분류:
-  <select name="post_category">
-    <option value="민평표">민평표</option>
-    <option value="단가표">단가표</option>
-    <option value="국고발행계획">국고발행계획</option>
-    <option value="채권뉴스">채권뉴스</option>
-  </select></p>
-  <p>제목: <input type="text" name="post_title" placeholder="제목을 입력하세요."></p>
-  <p>내용: <textarea name="post_content" placeholder="내용을 입력하세요."></textarea></p>
-  <p>파일 업로드: <input type="file" name="image"></p>
-  <input type="submit" value="등록하기">
-</form>
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4 text-center">
+      <h3 class="form-heading">게시글 등록하기</h3>
+
+      <form action="/foods/write_complete" method="post" enctype="multipart/form-data">
+        <p>+ 분류
+        <select name="post_category">
+          <option value="민평표">민평표</option>
+          <option value="단가표">단가표</option>
+          <option value="국고발행계획">국고발행계획</option>
+          <option value="채권뉴스">채권뉴스</option>
+        </select></p>
+        <p><input class="form-input" type="text" name="post_title" placeholder="제목을 입력하세요."></p>
+        <p><textarea class="form-textarea" name="post_content" placeholder="내용을 입력하세요."></textarea></p>
+        <p>+ 사진 업로드</p>
+        <p><input type="file" name="image"></p>
+        <input class="btn btn-lg btn-block" type="submit" value="추가하기">
+      </form>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>
