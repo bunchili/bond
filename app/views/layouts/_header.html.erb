@@ -1,7 +1,26 @@
-<h4><a href="/">Eunhong Yun의 채권Story</a> || <a href="/PreviousClosingYield">민평표</a> | <a href="/YieldPrice">단가표</a> | <a href="/KTBissue">국고발행계획</a> | <a href="/BondNews">채권뉴스</a> || <a href="/foods/write">글쓰기</a> ||
-<% if session[:user_id].nil? %>
-<a href="/users/signup">회원가입</a> | <a href="/users/login">로그인</a>
-<% else %>
-<a href="/users/logout_complete">로그아웃</a>
-<% end %>
-</h4>
+<div class="container">
+  <h1 class="bond-title"><a class="bond-title-link" href="/">Eunchong Yun의 채권 Story</a></h1>
+</div>
+
+<link rel="stylesheet" type="text/css" href="assets/bootstrap-flatly.css">
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="/PreviousClosingYield">민평표</a></li>
+      <li><a href="/YieldPrice">단가표</a></li>
+      <li><a href="/KTBissue">국고발행계획</a><li>
+      <li><a href="/BondNews">채권뉴스</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <% if session[:user_id].nil? %>
+      <li><a href="/foods/write">글쓰기</a></li>
+      <li><a href="/users/signup">회원가입</a></li>
+      <li><a href="/users/login">로그인</a></li>
+      <% else %>
+      <li><a href="/users/logout_complete">로그아웃</a></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
