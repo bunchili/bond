@@ -1,4 +1,7 @@
 Bond::Application.routes.draw do
+  get "profile/eunchong" => "profile#eunchong"
+  get "trading/bidask" => "trading#bidask"
+  get "trading/getdata"
   get "users/signup"
   post "users/signup_complete"
   get "users/login"
@@ -14,7 +17,7 @@ Bond::Application.routes.draw do
   get "foods/delete_complete/:id" => 'foods#delete_complete'  
   post "foods/write_comment_complete"
   get "foods/delete_comment_complete/:id" => 'foods#delete_comment_complete'
-# The priority is based upon order of creation: first created -> highest priority.
+  #The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

@@ -1,16 +1,27 @@
-<% @posts.reverse.each do |post| %>
+<br>
+<br>
+
+<% @posts.each do |post| %>
 <div class="panel">
   <div class="row panel-body">
-    <div class="col-md-3">
+    <div class="col-xs-1">
     </div>
-    <div class="col-md-3 text-right">
-     <%=post.image_url(:thumb)%>
+    
+    <div class="col-xs-8">
+      <h4><a href="/foods/show/<%= post.id %>"><%= post.title %></a> [<%= post.comments.count %>]</h4> 
+	    <p><span class="label label-warning"><%= post.category %></span> <strong><%= post.user.username %></strong> &nbsp; <%= post.created_at.strftime("%Y-%m-%d %H:%M")%></p>
     </div>
-    <div class="col-md-6">
-      <h4><a href="/foods/show/<%= post.id %>"><%= post.title %></a> [<%= post.comments.count %>]</h4>
-      <p><span class="label label-warning"><%= post.category %></span></p>
-      <p><strong><%= post.user.username %></strong></p>
+	
+	<div class="col-xs-3 text-right">
+	 <% if post.image_url %>
+		<u> <%= link_to "파일 다운로드", post.image_url %> </u>
+	<% end %>
     </div>
+	
   </div>
 </div>
-<% end %>
+<% end %> 
+
+<center> <%= will_paginate @posts %> </center>
+
+

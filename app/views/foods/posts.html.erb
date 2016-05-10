@@ -1,13 +1,12 @@
 <div class="container">
   <% if !flash[:alert].nil? %>
-  <div class="alert alert-danger">
+  <div class="alert alert-info">
     <%= flash[:alert] %>
   </div>
   <% end %>
 
-  <div class="well text-center">
-    <h3>Welcome to Eunchong's Bond Story</h3>
-    <p>채권의 모든 정보를 신속하고 정확하게 알려드리겠습니다.</p>
+  <div>
+    <center> <img src="/preface2.png" width="733" height="160"> </center>
   </div>
 
   <%= render :partial => "foods/posts" %>

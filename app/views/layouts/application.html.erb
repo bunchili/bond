@@ -1,16 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bond</title>
+
+<%= favicon_link_tag 'logo_favicon.ico' %>
+          <link href="/assets/logo_favicon2/256X256.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+		  <link rel="apple-touch-icon-precomposed" href="/assets/logo_favicon2.ico">
+		  <link rel="shortcut icon" "href="/assets/logo_favicon2/256X256.ico">
+
+  <title>ECBond</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76696338-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 <%= render :partial => "layouts/header" %>
 
 <%= yield %>
 
 </body>
+
+<br>
+<br>
+<br>
+
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	
+	<tr height="80" bgcolor="#5D5D5D" color="#FFFFFF"> 
+	 <td>
+	 	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr height="25" bgcolor="#5D5D5D" color="#FFFFFF">
+	 <td></td>
+	 </tr>
+	 		<tr>
+	 			<td width="15"></td>
+	 			<td width="303" align="center"><img src="/ECBond_Logo_White.jpg" width="150" height="38"></td>
+	 			<td class="copy" width="611" align="left"> <font color="white"> Copyright &copy;ECbond 2016. &nbsp; All Rights Reserved. <br>Yahoo ID: bunchili2<br>Mobile: 010-3734-3717, &nbsp;&nbsp;E-mail: <a href="mailto:eunchong.yun@gmail.com">eunchong.yun@gmail.com</a> </font><br></td>
+	 			<td width="15"></td>
+	 		</tr>
+	<tr height="25" bgcolor="#5D5D5D" color="#FFFFFF">
+	 <td></td>
+	 </tr>
+	 	</table>
+	  </td>
+	</tr>
+</table> 
+
+
+
 </html>

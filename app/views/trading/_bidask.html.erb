@@ -1,0 +1,156 @@
+<div ALIGN="right">
+ <table>
+   <tr bgcolor="black" width="40%"> <td width="10%"></td> <td align="center"> <font color = "#FFFFFF"><%= Time.zone.now.strftime("%Y년 %m월 %d일") %></td> <td width="10%"></td> </tr>
+   <tr                 width="40%"> <td width="10%"></td> <td align="center">                          <strong><%= Time.zone.now.strftime("%H:%M:%S")%>         </strong> </td> <td width="10%"></td> </tr>
+ </table>
+</div>
+
+<h2 align="center"><strong>국채선물호가</strong></h2>
+ 
+<br>
+
+ 
+<div class="row">
+  <div class="col-xs-6">
+     <table class="table table-hover table-bordered">
+	 
+		<thead>
+		<tr>
+		    <th width="15%">3년선물</th>
+			<th width="10%">매도잔량</th>
+			<th width="10%">호가</th>
+			<th width="10%">매수잔량</th>
+		</tr>
+		</thead>
+		<%= render "ftrading", {:trading => trading_all[7]} %>
+	  </table>
+ </div>
+
+ <div class="col-xs-6">
+     <table class="table table-hover table-bordered" >
+		<thead>
+		<tr>
+		    <th width="15%">10년선물</th>
+			<th width="10%">매도잔량</th>
+			<th width="10%">호가</th>
+			<th width="10%">매수잔량</th>
+		</tr>
+		</thead>
+		<%= render "ftrading", {:trading => trading_all[8]} %>
+	  </table>
+ </div>
+</div> 
+  
+  
+<br> 
+<br>  
+  
+  
+  <h2 align="center"><strong>장내국채 지표호가</strong></h2>
+  <h4 align="right">( J: 저스트단가, O: 시가, H: 고가, L: 저가 )</h4>
+   
+<div class="row">
+  <div class="col-xs-6">
+     <table class="table table-hover table-bordered" >
+	 
+		<thead>
+		<tr>
+		    <th width="14%">3y</th>
+			<th colspan="3" width="15%">호가</th>
+			<th width="10%">수익률</th>
+			<th width="10%">잔량</th>
+		</tr>
+		</thead>
+		
+		<%= render "trading", {:trading => trading_all[0]} %>
+	  </table>
+ </div>
+
+ <div class="col-xs-6">
+     <table class="table table-hover table-bordered" >
+		<thead>
+		<tr>
+		    <th width="14%">5y</th>
+			<th colspan="3" width="15%">호가</th>
+			<th width="10%">수익률</th>
+			<th width="10%">잔량</th>
+		</tr>
+		</thead>
+		<%= render "trading", {:trading => trading_all[1]} %>
+	  </table>
+ </div>
+</div>
+
+<br>
+<br>
+
+
+<div class="row">
+  <div class="col-xs-6">
+      <table class="table table-hover table-bordered" >
+		<thead>
+		<tr>
+		    <th width="14%">10y</th>
+			<th colspan="3" width="15%">호가</th>
+			<th width="10%">수익률</th>
+			<th width="10%">잔량</th>
+		</tr>
+		</thead>
+		<%= render "trading", {:trading => trading_all[2]} %>
+	  </table>
+   </div>
+
+
+
+
+<div class="col-xs-6">
+  <table class="table table-hover table-bordered" >
+		<thead>
+		<tr>
+		    <th width="14%">20y</th>
+			<th colspan="3" width="15%">호가</th>
+			<th width="10%">수익률</th>
+			<th width="10%">잔량</th>
+		</tr>
+		</thead>
+		<%= render "trading", {:trading => trading_all[3]} %>
+	  </table>
+   </div>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-xs-6">
+     <table class="table table-hover table-bordered" >
+		<thead>
+		<tr>
+		    <th width="14%">30y</th>
+			<th colspan="3" width="15%">호가</th>
+			<th width="10%">수익률</th>
+			<th width="10%">잔량</th>
+		</tr>
+		</thead>
+		<%= render "trading", {:trading => trading_all[4]} %>
+	  </table>
+  </div>
+
+
+
+<div class="col-xs-6">
+   <table class="table table-hover table-bordered" >
+		<thead>
+		<tr>
+		    <th width="14%">물가</th>
+			<th colspan="3" width="15%">호가</th>
+			<th width="10%">수익률</th>
+			<th width="10%">잔량</th>
+		</tr>
+		</thead>
+		<%= render "trading", {:trading => trading_all[5]} %>
+	  </table>
+
+ </div>
+</div>
+

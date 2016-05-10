@@ -1,21 +1,40 @@
 <div class="container">
-  <h1 class="bond-title"><a class="bond-title-link" href="/">Eunchong Yun의 채권 Story</a></h1>
+ <div class="row">
+   <div class="col-xs-3">
+   </div>
+	
+   <div class="col-xs-6">
+       <center> <h1 class="bond-title"><a href="/"> <img src="/ECBond_Logo.jpg" width="272" height="76"> </a></h1> </center>
+   </div>
+	
+   <div class="col-xs-3">
+   </div>
+ </div> 
 </div>
 
-<link rel="stylesheet" type="text/css" href="assets/bootstrap-flatly.css">
+<br>
+
+<link rel="stylesheet" type="text/css" href="/assets/bootstrap-flatly.css">
 
 <nav class="navbar navbar-default" role="navigation">
+
   <div class="container">
     <ul class="nav navbar-nav navbar-left">
       <li><a href="/PreviousClosingYield">민평표</a></li>
-      <li><a href="/YieldPrice">단가표</a></li>
-      <li><a href="/KTBissue">국고발행계획</a><li>
-      <li><a href="/BondNews">채권뉴스</a></li>
-      <li><a href="/foods/write">글쓰기</a></li>
+	  <li><a href="/YieldPrice">단가표</a></li>
+      <li><a href="/KTBissue">시황/뉴스</a><li>
+      <li><a href="/BondNews">크레딧</a></li>
+      
+	  <li><a href="/trading/bidask">국채호가</a></li>
+	  <li><a href="/profile/eunchong">프로필</a></li>
+	 
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <% if session[:user_id].nil? %>
+	  <li><a href="/foods/write">글쓰기</a></li>
+		  
+		  <% if session[:user_id].nil? %>
+	    
       <li><a href="/users/signup">회원가입</a></li>
       <li><a href="/users/login">로그인</a></li>
       <% else %>

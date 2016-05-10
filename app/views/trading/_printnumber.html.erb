@@ -1,0 +1,12 @@
+<td ALIGN="right">
+
+<% if f1 == f2 %>
+	<font color = "#000000">
+<% elsif f1.to_f < f2.to_f %>
+	<font color = "#FF0000">
+<% else %>
+	<font color = "#0000FF">
+<% end %>
+
+<strong><%= number_with_precision(f2,  precision: p)  %></strong>
+</td> 

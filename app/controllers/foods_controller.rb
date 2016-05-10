@@ -1,8 +1,10 @@
 class FoodsController < ApplicationController
   before_action :login_check
   skip_before_action  :login_check, :only => [:posts, :posts_category, :show]
+  
   def posts
-    @posts = Post.all
+    #@posts = Post.all
+	@posts = Post.paginate(page: params[:page], per_page: 6, order: 'created_at DESC')
   end
 
   def posts_category
@@ -12,11 +14,13 @@ class FoodsController < ApplicationController
     when "YieldPrice"
       @category = "단가표"
     when "KTBissue"
-      @category = "국고발행계획"
-    else
-      @category = "채권뉴스"
+      @category = "시황/뉴스"
+    when "BondNews"
+      @category = "크레딧"
     end
-    @posts = Post.where(category: @category)
+    #@posts = Post.where(category: @category)
+	@posts = Post.where(category: @category).paginate(page: params[:page], per_page: 6, order: 'created_at DESC')
+	
   end
 
   def show
@@ -33,7 +37,8 @@ class FoodsController < ApplicationController
     post.category = params[:post_category]
     post.title = params[:post_title]
     post.content = params[:post_content]
-    post.image = params[:image]
+	post.image = params[:post_image]
+  
     if post.save
       flash[:alert] = "저장되었습니다."
       redirect_to "/foods/show/#{post.id}"
@@ -99,4 +104,5 @@ class FoodsController < ApplicationController
       redirect_to :back
     end
   end
+  
 end

@@ -1,0 +1,68 @@
+<script type="text/javascript">
+
+var v = 0;
+var intervalMSec = 3000
+
+$(document).ready(function() {
+	clearAllInterval();
+	refreshPartial();
+	setInterval(refreshPartial, intervalMSec);
+});
+
+function clearAllInterval() {
+	for (var i = 1; i < 99999; i++)
+		clearInterval(i);
+}
+
+function refreshPartial() {
+  $.ajax({
+    	url: "/trading/getdata",
+			type: "GET",
+			success: function(data) {
+				$("#trading-data").html(data);
+			}
+	}); 
+	v = v + 1;
+}
+
+
+</script>
+
+<div>
+  
+  <style type="text/css">
+   th{
+     text-align: center;
+     background-color: #0c5775;
+     color: #ffffff;	 
+    }
+
+ .ask{
+	 background-color: #96C7ED
+	 }
+
+ .bid{
+     background-color: #FAC6C6
+	 }
+	 
+ .cur{
+     background-color: #FFDFB0;
+	 border-top: 2px solid red;
+	 border-bottom: 2px solid red;
+	 border-left: 2px solid red;
+	 border-right: 2px solid red
+	 }
+	 
+ .cen{
+     background-color: #96C7ED;
+     border-bottom: 2px solid black
+	 }
+	 	 
+  td,th,tr{font-size:16pt}
+  </style>
+
+
+	<div id="trading-data">
+	
+	</div>
+</div>
