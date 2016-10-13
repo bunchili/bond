@@ -1,12 +1,30 @@
-<td ALIGN="right">
-
 <% if f1 == f2 %>
+	<% if defined? f3 and f2 == f3 %>
+		<td ALIGN="center"><div style="border: 2px solid #000000;">
+	<% else %>
+		<td ALIGN="center">
+	<% end %>
 	<font color = "#000000">
 <% elsif f1.to_f < f2.to_f %>
+	<% if defined? f3 and f2 == f3 %>
+		<td ALIGN="center"><div style="border: 2px solid #FF0000;">
+	<% else %>
+		<td ALIGN="center">
+	<% end %>
 	<font color = "#FF0000">
 <% else %>
+	<% if defined? f3 and f2 == f3 %>
+		<td ALIGN="center"><div style="border: 2px solid #0000FF;">
+	<% else %>
+		<td ALIGN="center">
+	<% end %>
 	<font color = "#0000FF">
 <% end %>
 
 <strong><%= number_with_precision(f2,  precision: p)  %></strong>
+
+<% if defined? f3 and f2 == f3 %>
+</div>
+<% end %>
+
 </td> 
